@@ -7,7 +7,7 @@ import pickle
 # Load model & scaler
 # ----------------------------
 with open("churn_model.pkl", "rb") as f:
-    model = pickle.load(f)
+    xgb_model = pickle.load(f)
 
 with open("scaler.pkl", "rb") as f:
     scaler = pickle.load(f)
@@ -107,3 +107,4 @@ if st.button("🔍 Predict Churn"):
         st.error(f"⚠️ User is likely to CHURN (Probability: {probability:.2f})")
     else:
         st.success(f"✅ User is NOT likely to churn (Probability: {probability:.2f})")
+
